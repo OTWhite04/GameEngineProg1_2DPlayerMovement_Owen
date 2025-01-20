@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     //Variable for the move direction.
     private Vector3 moveDirection = Vector3.zero;
 
-    public Rigidbody2D rigidBody;
+    
 
     //Float move speed variable.
     public float moveSpeed = 2.0f;
