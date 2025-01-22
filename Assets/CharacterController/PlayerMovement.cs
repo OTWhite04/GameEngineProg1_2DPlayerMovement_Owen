@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Reference to the player controller.
-    public CharacterController characterController;
+    
    
     //Variable for the move direction.
     private Vector3 moveDirection = Vector3.zero;
 
-    
+    //Reference to the Rigidbody.
+    Rigidbody2D rigidBody;
 
     //Float move speed variable.
     public float moveSpeed = 2.0f;
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        characterController = this.GetComponent<CharacterController>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     //Method for the player movement.
     void HandlePlayerMovement(Vector2 moveDirection)
     {
-        characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+        rigidBody.MovePosition(rigidBody.position + moveDirection * moveSpeed * Time.deltaTime);
     }
 
     //Method for handling the input.
